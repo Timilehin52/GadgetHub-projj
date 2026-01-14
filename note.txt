@@ -1,0 +1,21 @@
+homepage
+header
+user signed in/ user signed out
+search input functionality
+products links
+shop now btns link to cart using product id
+
+shop categories btn????
+
+footer
+subscribe form and btn (validation)
+
+
+product page
+filter (functionality)
+pagination
+
+product details page
+buy now btn and add to cart btn (functionalities)
+
+Cart Page - empty and filled

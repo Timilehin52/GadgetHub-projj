@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+*{
+      font-family: "Instrument Sans", sans-serif;
+}
+.borderStyle{
+    border-top: 8px solid #FA8232;
+    border-bottom: 1px solid #FFEFD2;
+    border-left: 1px solid #FFEFD2;
+    border-right: 1px solid #FFEFD2;
+}
