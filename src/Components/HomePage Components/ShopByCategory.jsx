@@ -44,7 +44,7 @@ export default function ShopByCategory() {
             <p className="text-sm text-gray-500">Discover 50+ Products</p>
           </div>
         ))}
-        <button onClick={toCategories} className="absolute -right-4 top-15 bg-[#FA8232] h-12 w-12 rounded-full text-[35px] text-white flex items-center justify-center">
+        <button onClick={toCategories} className="absolute -right-4 top-15 bg-[#6C4CF1] h-12 w-12 rounded-full text-[35px] text-white flex items-center justify-center">
           <IoIosArrowRoundForward />
         </button>
       </div>

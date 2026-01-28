@@ -12,8 +12,8 @@ export default function ForgotPassword() {
         <form className="flex flex-col gap-2">
             <label htmlFor="Email">Email</label>
             <Input type="email" className="w-full" placeholder="Enter your email" />
-            <Button type="button" className="mt-2 w-full bg-[#FA8232] hover:bg-[#db6b21] text-white font-semibold text-[18px] rounded-md h-[54px]" content="Send Reset Link"  />
-            <Button type="button" content="Cancel" className="text-red-900 font-semibold text-[16px] mt-3 w-full" />
+            <Button type="button" className="mt-2 w-full text-white font-semibold text-[18px] rounded-md h-[54px]" content="Send Reset Link"  />
+            <Button type="button" content="Cancel" className="text-red-900 font-semibold bg-transparent hover:bg-[#F3F0FF] h-[54px] text-[16px] mt-3 w-full" />
         </form>
     </ResetLayout>
   )

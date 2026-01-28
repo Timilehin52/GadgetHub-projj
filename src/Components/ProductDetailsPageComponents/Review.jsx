@@ -8,10 +8,10 @@ export default function Review() {
     <div>
         <div className="flex items-center justify-between py-5">
             <h1 className="text-[20px] font-semibold">Customer Reviews</h1>
-            <Button content="Write a Review" className="border w-[178px] bg-[#FA8232] text-white rounded-md h-12" />
+            <Button content="Write a Review" className="border w-[178px] text-white rounded-md h-12" />
         </div>
 
-        <div className="bg-[#F4F4F3] h-[235] my-4 w-full rounded-md p-5">
+        <div className="bg-[#F4F4F3] h-[235px] my-4 w-full rounded-md p-5">
             <div className="flex items-center gap-4 py-3">
                 <img className="w-[35px] h-[35px] rounded-full" src={Avatar} alt="" />
                 <div>

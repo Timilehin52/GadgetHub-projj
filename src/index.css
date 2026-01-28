@@ -3,16 +3,16 @@
       font-family: "Instrument Sans", sans-serif;
 }
 .borderStyle{
-    border-top: 8px solid #FA8232;
-    border-bottom: 1px solid #FFEFD2;
-    border-left: 1px solid #FFEFD2;
-    border-right: 1px solid #FFEFD2;
+    border-top: 8px solid #6C4CF1;
+    border-bottom: 1px solid #F3F0FF;
+    border-left: 1px solid #F3F0FF;
+    border-right: 1px solid #F3F0FF;
 }
 
 .cartFrame{
     background-image: url("./assets/cartFrame.png");
     height: 189px;
-    background-color: #FFF1EA;
+    background-color: #F3F0FF;
     opacity: 90%;
     background-repeat: no-repeat;
     background-position: center;

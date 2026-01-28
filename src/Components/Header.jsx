@@ -109,7 +109,7 @@ export default function Header() {
                 <button onClick={showCart} className="relative" key={icon.id}>
                   <span className="text-3xl">{icon.icon}</span>
                   {cart.length > 0 && (
-                    <span className="bg-[#FA8232] text-white w-6 h-6 rounded-full flex items-center justify-center absolute -top-2 -right-2">
+                    <span className="bg-[#6C4CF1] text-white w-6 h-6 rounded-full flex items-center justify-center absolute -top-2 -right-2">
                       {cart.length}
                       </span>
                     )}
@@ -118,7 +118,7 @@ export default function Header() {
               <Link to={icon.linkTo} key={icon.id} className="relative">
                 <span className="text-3xl">{icon.icon}</span>
                 {likes.length > 0 && (
-                  <span className="bg-[#FA8232] text-white w-6 h-6 rounded-full flex items-center justify-center absolute -top-2 -right-2">
+                  <span className="bg-[#6C4CF1] text-white w-6 h-6 rounded-full flex items-center justify-center absolute -top-2 -right-2">
                     {likes.length}
                   </span>
                 )}

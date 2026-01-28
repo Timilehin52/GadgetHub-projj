@@ -26,7 +26,7 @@ export default function ShoppingCartItem({id,image,name,description,quantity,pri
             className="bg-[#F4F4F3] flex items-center justify-center rounded-md w-[26px] h-5"><HiMiniMinus /></button>
             <span>{quantity}</span>
             <button onClick={() => increaseQuantity(id)}
-            className="bg-[#FA8232] text-white flex items-center justify-center rounded-md w-[26px] h-5"><LuPlus size={14} /></button>
+            className="bg-[#6C4CF1] text-white flex items-center justify-center rounded-md w-[26px] h-5"><LuPlus size={14} /></button>
           </div>
         </div>
       </div>

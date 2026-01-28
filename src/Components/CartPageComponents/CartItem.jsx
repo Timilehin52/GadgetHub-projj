@@ -40,7 +40,7 @@ export default function CartItem({id, image, name,description,quantity,price,isI
         <div className="flex items-center justify-between gap-2">
             <button onClick={() => decreaseQuantity(id)} className="bg-[#F4F4F3] flex items-center justify-center text-dark h-[34px] w-[42px]"><HiMiniMinus  /></button>
             <span className="text-[20px]">{quantity}</span>
-            <button onClick={() => increaseQuantity(id)}  className="bg-[#FA8232] flex items-center justify-center text-white h-[34px] w-[42px]"><LuPlus size={14} /></button>
+            <button onClick={() => increaseQuantity(id)}  className="bg-[#6C4CF1] flex items-center justify-center text-white h-[34px] w-[42px]"><LuPlus size={14} /></button>
         </div>
        </div>
     </div>

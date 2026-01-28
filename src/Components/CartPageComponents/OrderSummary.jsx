@@ -11,7 +11,7 @@ export default function OrderSummary() {
             <p className="font-semibold">{totalPrice}</p>
         </div>
         <p>Delivery Fees not included yet</p>
-        <button className="bg-[#FA8232] w-full h-[48px] flex items-center justify-center text-white rounded-md mt-2" >Proceed to checkout</button>
+        <button className="bg-[#6C4CF1] w-full h-[48px] flex items-center justify-center text-white rounded-md mt-2" >Proceed to checkout</button>
     </div>
   )
 }

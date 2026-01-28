@@ -104,7 +104,7 @@ export default function ProductPage() {
                 <button
                   key={page}
                   className={`h-10 w-10 flex justify-center items-center rounded-md ${
-                    page === currentPage ? "bg-[#FA8232] text-white" : "border border-[#E8E6E6]"
+                    page === currentPage ? "bg-[#6C4CF1] text-white" : "border border-[#E8E6E6]"
                   }`}
                   onClick={() => goToPage(page)}
                 >

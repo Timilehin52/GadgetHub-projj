@@ -18,7 +18,7 @@ export default function ProductTabs({ product }) {
           onClick={() => setActiveTab("specs")}
           className={`pb-3 text-[22px] font-semibold ${
             activeTab === "specs"
-              ? "text-[#FA8232] border-b border-[#FA8232]"
+              ? "text-[#6C4CF1] border-b border-[#E8E6E6]"
               : "text-gray-400"
           }`}
         >
@@ -29,7 +29,7 @@ export default function ProductTabs({ product }) {
           onClick={() => setActiveTab("reviews")}
           className={`pb-3 text-[22px] font-semibold ${
             activeTab === "reviews"
-              ? "text-[#FA8232] border-b-2 border-[#FA8232]"
+              ? "text-[#6C4CF1] border-b border-[#E8E6E6]"
               : "text-gray-400"
           }`}
         >

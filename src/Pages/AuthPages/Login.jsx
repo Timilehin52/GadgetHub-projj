@@ -83,9 +83,9 @@ export default function Login() {
                 <button type="button" onClick={toggleShowPassword} className="absolute top-1/2 right-3">{ showPassword ? <GoEye /> : <GoEyeClosed />  }</button>
             </div>
                  { errors.password && <p className="text-red-900 font-semibold">{errors.password }</p>}
-           <Link to=""><p>Forgot your password?</p></Link>
+           <Link to="/forgotpassword"><p>Forgot your password?</p></Link>
 
-            <Button onClick={handleSubmit} content={ isLoading ? "Loading" : "Login"} type="submit" className="bg-[#FA8232] hover:bg-[#db6b21] text-white h-[54px] mt-5 font-semibold" />
+            <Button onClick={handleSubmit} content={ isLoading ? "Loading" : "Login"} type="submit" className="text-white h-[54px] mt-5 font-semibold" />
         </form>
     </AuthLayout>
   )

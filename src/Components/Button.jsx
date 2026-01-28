@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 
 export default function Button({ className="", content, onClick, disabled= false, type= "button"}) {
   return (
-    <button type={type} onClick={onClick} disabled={disabled} className={`${className} flex flex-row items-center justify-center rounded-md`}>
+    <button type={type} onClick={onClick} disabled={disabled} className={`${className} flex flex-row items-center bg-[#6C4CF1] hover:bg-[#5f3ce7] justify-center rounded-md`}>
         {content}
     </button>
   )

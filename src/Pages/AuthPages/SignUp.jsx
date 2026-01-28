@@ -146,7 +146,7 @@ export default function SignUp() {
          {errors.checkbox && <span className="text-red-700 font-semibold">{errors.checkbox}</span>}
          
 
-          <Button disabled={isLoading} onClick={handleSubmit} content={isLoading ? "Loading" : "Sign up"} className="bg-[#FA8232] hover:bg-[#db6b21] text-white h-[54px] mt-5 font-semibold" />
+          <Button disabled={isLoading} onClick={handleSubmit} content={isLoading ? "Loading" : "Sign up"} className="text-white h-[54px] mt-5 font-semibold" />
       </form>
 
     </AuthLayout>

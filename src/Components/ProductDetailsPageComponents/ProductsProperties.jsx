@@ -82,7 +82,7 @@ export default function ProductsProperties({product}) {
                   className={`object-cover rounded-md
                     ${
                       selectedImage === img
-                        ? "border border-[#FA8232]"
+                        ? "border border-[#6C4CF1]"
                         : "border border-[#E8E6E6]"
                     }
                   `}
@@ -123,7 +123,7 @@ export default function ProductsProperties({product}) {
           onClick={() => setSelectedColor(clr)}
           className={`h-8 w-8 rounded-full border transition ${
             selectedColor.name === clr.name
-              ? "border-[#FA8232]"
+              ? "border-[#6C4CF1]"
               : "border-[#E8E6E6]"
           }`}
           style={{ backgroundColor: clr.colorCode }}
@@ -143,7 +143,7 @@ export default function ProductsProperties({product}) {
           onClick={() => setSelectedStorage(size)}
           className={`px-4 py-2 h-[35px] w-[70px] border rounded-md text-sm ${
             selectedStorage === size
-              ? "border-[#FA8232] text-[#FA8232]"
+              ? "border-[#6C4CF1] text-[#6C4CF1] bg-[#F4F1FF]"
               : "border-gray-500 text-gray-300"
           }`}
         >
@@ -176,11 +176,11 @@ export default function ProductsProperties({product}) {
           <div className="space-y-3 pt-4">
             <Button
               content="Buy Now"
-              className="w-full bg-[#FA8232] hover:bg-[#db6b21] text-white rounded-md h-12"
+              className="w-full text-white rounded-md h-12"
             />
             <Button
               content="Add to Cart"
-              className="w-full border border-[#FA8232] text-[#FA8232] rounded-md h-12"
+              className="w-full border border-[#6C4CF1] text-[#6C4CF1] rounded-md h-12"
             />
           </div>
 

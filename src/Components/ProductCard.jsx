@@ -40,7 +40,7 @@ export default function ProductCard({id,image,name,description,rating,reviews,pr
             </div>
             <p className="text-[18px]">{displayPrice}</p>
         </Link>
-          <Button onClick={()=> addToCart({id,image,name,price,description})} className="bg-[#FA8232] hover:bg-[#db6b21] w-full h-12 text-[16px] mt-2 rounded-md text-white font-semibold" content="Add To Cart" />
+          <Button onClick={()=> addToCart({id,image,name,price,description})} className=" w-full h-12 text-[16px] mt-2 rounded-md text-white font-semibold" content="Add To Cart" />
     </div>
     </div>
     </div>

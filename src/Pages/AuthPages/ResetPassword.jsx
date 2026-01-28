@@ -16,7 +16,7 @@ export default function ResetPassword() {
             <Input type="password" placeholder="Enter your new password" className="w-full my-2" />
             <p className="text-gray-700">Must match the above field</p>
 
-            <Button content="Update Password" type="button" className="mt-4 w-full bg-[#FA8232] hover:bg-[#db6b21] text-white font-semibold text-[18px] rounded-md h-[54px]" />
+            <Button content="Update Password" type="button" className="mt-4 w-full text-white font-semibold text-[18px] rounded-md h-[54px]" />
         </form>
     </ResetLayout>
   )

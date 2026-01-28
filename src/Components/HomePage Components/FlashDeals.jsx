@@ -31,7 +31,7 @@ export default function FlashDeals() {
                    </div>
 
                     <CountdownTimer endTime={saleEndTime} />
-                    <button className="text-[#FA6603] bg-white w-[80%] rounded-md py-3 hover:bg-[#FA6603] hover:text-white">View All deals</button>
+                    <button className="text-[#6C4CF1] bg-white w-[80%] rounded-md py-3 hover:bg-[#6C4CF1] hover:text-white">View All deals</button>
 
 
                 </div>

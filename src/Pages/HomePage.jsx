@@ -14,7 +14,7 @@ export default function HomePage() {
     const timer = setTimeout(() => setPageIsLoading(false), 500);
     return () => clearTimeout(timer);
   }, []);
-  if (pageIsLoading) return <div className="flex flex-col mx-auto items-center justify-center h-screen"><BounceLoader color="#FA8232" size={100} />
+  if (pageIsLoading) return <div className="flex flex-col mx-auto items-center justify-center h-screen"><BounceLoader color="#6C4CF1" size={100} />
   <p className="text-lg lg:text-3xl pt-2 font-semibold">Loading...</p></div>
   
   return (

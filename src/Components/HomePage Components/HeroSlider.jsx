@@ -33,7 +33,7 @@ export default function HeroSlider() {
                     <p className="text-[24px]">Iphone 15 Pro Max</p>
                     <h1 className="text-[38px] py-1">FROM ₦1,000,000</h1>
                     <p className="text-[16px]">A17 Pro chip with 6-core GPU Pro camera <br /> system with 48MP main</p>
-                    <Button className="bg-[#FA8232] hover:bg-[#db6b21] w-[118px] h-[38px] lg:h-[48px] mt-2 font-semibold text-white" content="Shop now" />
+                    <Button className="w-[118px] h-[38px] lg:h-[48px] mt-2 font-semibold text-white" content="Shop now" />
                 </div>
                 <img src={ProMax} alt="" className="absolute bottom-0 right-0 w-[40%] h-[500.5372619628906px]" />
                 </div>
@@ -44,7 +44,7 @@ export default function HeroSlider() {
                         <img className="w-[160px] h-[160px]" src={Pods} alt="" />
                         <div className="w-[30%]">
                             <h1 className="text-[24px] font-semibold">Oriamo <br /> FlipBuds Pro</h1>
-                             <Button className="bg-[#FA8232] hover:bg-[#db6b21] w-[80px] text-sm lg:text-[16px] lg:w-[100px] h-[38px] lg:h-[48px] mt-2 font-semibold text-white" content="Shop now" />
+                             <Button className=" w-[80px] text-sm lg:text-[16px] lg:w-[100px] h-[38px] lg:h-[48px] mt-2 font-semibold text-white" content="Shop now" />
                         </div>
                     </div>
 
@@ -52,7 +52,7 @@ export default function HeroSlider() {
                         <div className="absolute left-10 top-10 w-[40%]">
                             <p className="text-[#EBC80C] text-[14px] ">FLASH SALES</p>
                             <h1 className="text-[24px]  font-semibold text-white">New Google <br /> Pixel 6 Pro</h1>
-                            <Button className="bg-[#FA8232] hover:bg-[#db6b21] w-[80px] text-sm lg:text-[16px] lg:w-[100px] h-[38px] lg:h-[48px] mt-2 font-semibold text-white" content="Shop now" />
+                            <Button className=" w-[80px] text-sm lg:text-[16px] lg:w-[100px] h-[38px] lg:h-[48px] mt-2 font-semibold text-white" content="Shop now" />
                         </div>
                         <span className="bg-[#EFD33D] w-[90px] h-[35px] absolute right-10 top-15 z-88 flex items-center justify-center font-semibold rounded-xs">15% OFF</span>
                         <img className="w-[50%] h-[192px] absolute bottom-1 -right-4" src={PixelPhone} alt="" />
@@ -71,7 +71,7 @@ export default function HeroSlider() {
                      <p className="text-[24px]">Iphone 15 Pro Max</p>
                     <h1 className="text-[38px] py-1">FROM ₦1,000,000</h1>
                     <p className="text-[16px]">A17 Pro chip with 6-core GPU Pro camera <br /> system with 48MP main</p>
-                     <Button className="bg-[#FA8232] hover:bg-[#db6b21] w-[118px] h-[38px] lg:h-[48px] mt-2 font-semibold text-white" content="Shop now" />
+                     <Button className=" w-[118px] h-[38px] lg:h-[48px] mt-2 font-semibold text-white" content="Shop now" />
                 </div>
                 <img src={PromAxPink} alt="" className="absolute bottom-0 right-0 w-[40%] h-[460.5372619628906px]" />
                 </div>
@@ -82,7 +82,7 @@ export default function HeroSlider() {
                         <img className="w-[160px] h-[160px]" src={Pods} alt="" />
                         <div className="w-[30%]">
                             <h1 className="text-[24px] font-semibold">Oriamo <br /> FlipBuds Pro</h1>
-                             <Button className="bg-[#FA8232] hover:bg-[#db6b21] w-[80px] text-sm lg:text-[16px] lg:w-[100px] h-[38px] lg:h-[48px] mt-2 font-semibold text-white" content="Shop now" />
+                             <Button className=" w-[80px] text-sm lg:text-[16px] lg:w-[100px] h-[38px] lg:h-[48px] mt-2 font-semibold text-white" content="Shop now" />
                         </div>
                     </div>
 
@@ -90,7 +90,7 @@ export default function HeroSlider() {
                         <div className="absolute left-10 top-10 w-[60%]">
                             <p className="text-[#EBC80C] text-[14px]">FLASH SALES</p>
                             <h1 className="text-[24px] font-semibold text-white">Xiaomi Mi 11 <br /> Ultra <br /> 12GB+256GB</h1>
-                             <Button className="bg-[#FA8232] hover:bg-[#db6b21] w-[80px] text-sm lg:text-[16px] lg:w-[100px] h-[38px] lg:h-[48px] mt-2 font-semibold text-white" content="Shop now" />
+                             <Button className=" w-[80px] text-sm lg:text-[16px] lg:w-[100px] h-[38px] lg:h-[48px] mt-2 font-semibold text-white" content="Shop now" />
                         </div>
                         <span className="bg-[#EFD33D] w-[90px] h-[35px] absolute right-10 top-9 z-88 flex items-center justify-center font-semibold rounded-xs">15% OFF</span>
                         <img className="w-[40%] h-[190px] absolute bottom-0 -right-4" src={Xiaomi} alt="" />
@@ -109,7 +109,7 @@ export default function HeroSlider() {
                     <p className="text-[24px]">Iphone 15 Pro Max</p>
                     <h1 className="text-[38px] py-1">FROM ₦1,000,000</h1>
                     <p className="text-[16px]">A17 Pro chip with 6-core GPU Pro camera <br /> system with 48MP main</p>
-                    <Button className="bg-[#FA8232] hover:bg-[#db6b21] w-[118px] h-[38px] lg:h-[48px] mt-2 font-semibold text-white" content="Shop now" />
+                    <Button className=" w-[118px] h-[38px] lg:h-[48px] mt-2 font-semibold text-white" content="Shop now" />
                 </div>
                 <img src={ProMax} alt="" className="absolute bottom-0 right-0 w-[327.8207092285156px] h-[500.5372619628906px]" />
                 </div>
@@ -120,7 +120,7 @@ export default function HeroSlider() {
                         <img className="w-[160px] h-[160px]" src={Pods} alt="" />
                         <div className="w-[30%]">
                             <h1 className="text-[24px] font-semibold">Oriamo <br /> FlipBuds Pro</h1>
-                             <Button className="bg-[#FA8232] hover:bg-[#db6b21] w-[80px] text-sm lg:text-[16px] lg:w-[100px] h-[38px] lg:h-[48px] mt-2 font-semibold text-white" content="Shop now" />
+                             <Button className=" w-[80px] text-sm lg:text-[16px] lg:w-[100px] h-[38px] lg:h-[48px] mt-2 font-semibold text-white" content="Shop now" />
                         </div>
                     </div>
 
@@ -128,7 +128,7 @@ export default function HeroSlider() {
                         <div className="absolute left-10 top-10 w-[40%]">
                             <p className="text-[#EBC80C] text-[14px] ">FLASH SALES</p>
                             <h1 className="text-[24px]  font-semibold text-white">New Google <br /> Pixel 6 Pro</h1>
-                            <Button className="bg-[#FA8232] hover:bg-[#db6b21] w-[80px] text-sm lg:text-[16px] lg:w-[100px] h-[38px] lg:h-[48px] mt-2 font-semibold text-white" content="Shop now" />
+                            <Button className=" w-[80px] text-sm lg:text-[16px] lg:w-[100px] h-[38px] lg:h-[48px] mt-2 font-semibold text-white" content="Shop now" />
                         </div>
                         <span className="bg-[#EFD33D] w-[90px] h-[35px] absolute right-10 top-15 z-88 flex items-center justify-center font-semibold rounded-xs">15% OFF</span>
                         <img className="w-[50%] h-[192px] absolute bottom-1 -right-4" src={PixelPhone} alt="" />
@@ -163,7 +163,7 @@ export default function HeroSlider() {
             <h1 className="text-[14px]">Iphone 15 Pro Max</h1>
             <h1 className="text-[20px]">FROM  ₦1,000,000</h1>
             <p className="text-[10px]">A17 Pro chip with 6-core GPU Pro camera <br /> system with 48MP main</p>
-            <Button className="bg-[#FA8232] hover:bg-[#db6b21] w-[70px] h-[25px] mt-2 text-white font-semibold text-[10px]" content="Shop now" />
+            <Button className=" w-[70px] h-[25px] mt-2 text-white font-semibold text-[10px]" content="Shop now" />
         </div>
         <img className="w-[75px] object-fit h-[150px]" src={Iphone} alt="" />
        </div>
@@ -178,7 +178,7 @@ export default function HeroSlider() {
            <h1 className="text-[14px]">Iphone 15 Pro Max</h1>
             <h1 className="text-[20px]">FROM  ₦1,000,000</h1>
             <p className="text-[10px]">A17 Pro chip with 6-core GPU Pro camera <br /> system with 48MP main</p>
-            <Button className="bg-[#FA8232] hover:bg-[#db6b21] w-[70px] h-[25px] mt-2 text-white font-semibold text-[10px]" content="Shop now" />
+            <Button className=" w-[70px] h-[25px] mt-2 text-white font-semibold text-[10px]" content="Shop now" />
         </div>
         <img className="w-[75px] object-fit h-[150px]" src={PromAxPink} alt="" />
        </div>

@@ -19,10 +19,10 @@ export default function CartPage() {
        { cart.length === 0 ? 
        <div className="h-[400px] flex items-center justify-center">
        <div className="flex flex-col items-center justify-center text-center mx-auto h-[282px]">
-       <h1><span className="bg-[#FFF2ED] text-dark rounded-full h-[99px] w-[99px] flex items-center justify-center"><IoCartOutline size={50} /></span></h1>
+       <h1><span className="bg-[#F4F1FF] text-dark rounded-full h-[99px] w-[99px] flex items-center justify-center"><IoCartOutline size={50} /></span></h1>
        <h1 className="text-[28px] font-semibold"> Your Cart Is Empty!</h1>
        <p className="text-[#5F6C72] text-[18px] font-normal">Browse all categories and discover our new arrivals</p>
-       <button onClick={handleContinueShopping} className="bg-[#FA8232] rounded-md text-white h-[48px] w-[182px] my-2">Start Shopping</button>
+       <button onClick={handleContinueShopping} className="bg-[#6C4CF1] rounded-md text-white h-[48px] w-[182px] my-2">Start Shopping</button>
        </div>
        </div> : <>
        <div className="cartFrame">

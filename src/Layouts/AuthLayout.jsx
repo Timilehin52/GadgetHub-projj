@@ -10,7 +10,7 @@ export default function AuthLayout({title,paragraph,children,auth,to}) {
      <div className="relative flex flex-col w-full lg:w-[600px] items-center">
            <button className="absolute top-0 right-0"><IoIosClose size={40} /></button>
         <h1 className="text-[54px] font-semibold">{title} </h1>
-        <p className="text-[18px]">{paragraph} <Link to={to} className="text-[#FA8232] font-semibold py-2">{auth}</Link></p>
+        <p className="text-[18px]">{paragraph} <Link to={to} className="text-[#6C4CF1] font-semibold py-2">{auth}</Link></p>
         <div className="w-full pt-5">
             {children}
         </div>

@@ -99,7 +99,7 @@ export default function FilterSideBar({ activeFilters, setActiveFilters }) {
                     {filter.options.map((option, idx) => (
                         <label key={idx} 
                         className="flex items-center gap-2 cursor-pointer text-[#5F6C72] hover:text-black">
-                        <input type={["Category", "Price Range", "Availability"].includes(filter.name) ? "radio" : "checkbox"} name={filter.name} className="w-[16px] accent-[#FA8232] h-[16px] rounded-full" onChange={() => {
+                        <input type={["Category", "Price Range", "Availability"].includes(filter.name) ? "radio" : "checkbox"} name={filter.name} className="w-[16px] accent-[#6C4CF1] h-[16px] rounded-full" onChange={() => {
                           const map = {Category: "category","Price Range": "price",Brand: "brands",Ratings: "rating",Availability: "availability",}; handleChange(map[filter.name], option);}}/>
                         <span className="text-[14px]">{option}</span>
                         </label>
