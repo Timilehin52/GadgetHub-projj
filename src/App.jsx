@@ -13,6 +13,10 @@ import CartPage from "./Pages/CartPage"
 import CheckoutPage from "./Pages/CheckoutPage"
 import Profile from "./Pages/Profile"
 import ProtectRoute from "./Components/ProtectRoute"
+import Dashboard from "./Components/Admin/Pages/Dashboard"
+import AdminLayout from "./Components/Admin/Layout/AdminLayout"
+import Orders from "./Components/Admin/Pages/Orders"
+import Products from "./Components/Admin/Pages/Products"
 
 function App() {
 
@@ -31,6 +35,16 @@ function App() {
         <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/cartpage" element={<CartPage />} />
         <Route path="/profile" element={<ProtectRoute><Profile /></ProtectRoute>} />
+
+       <Route path="/admin" element={<AdminLayout />}>
+        <Route index element={<Dashboard />} />
+        <Route path="orders" element={<Orders />} />
+        <Route path="products" element={<Products />} />
+        {/* <Route path="customers" element={<Customers />} />
+        <Route path="payments" element={<Payments />} />
+        <Route path="settings" element={<AdminSettings />} /> */}
+        </Route>
+
       </Routes>
        <ScrollToTop />
     </Router>

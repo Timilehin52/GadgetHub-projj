@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from "react-router"
 import { TiTick } from "react-icons/ti";
-import Button from "../../Components/Button"
+import Button from "../Button"
 
 export default function OrderReceived({showModal, setShowModal}) {
 

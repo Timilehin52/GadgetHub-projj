@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import {CartContext } from "../../Context/ShoppingCartContext"
-import OrderItems from "../CheckoutPage Components/OrderItems"
+import OrderItems from "./OrderItems"
 
 export default function OrderSummary({onConfirm}) {
     const {cart, totalPrice, getCartCount} = useContext(CartContext)

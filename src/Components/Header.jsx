@@ -12,8 +12,10 @@ import { LikeContext } from "../Context/LikeContext"
 import { useNavigate } from "react-router"
 import { AuthContext } from "../Context/AuthContext"
 import { FaChevronDown, FaChevronUp } from "react-icons/fa"
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import Button from "../Components/Button"
+import { GiHamburgerMenu } from "react-icons/gi";
+import { IoCloseSharp } from "react-icons/io5";
 
 export default function Header() {
   const navigate = useNavigate();
@@ -22,6 +24,10 @@ export default function Header() {
   const { cart } = useContext(CartContext)
   const { likes } =  useContext(LikeContext)
   const { user,logout } = useContext(AuthContext)
+  const [ menuOpen, setMenuOpen] = useState(false)
+  const toggleMenu = ()=>{
+    setMenuOpen(!menuOpen)
+  }
 
   const icons= [
         {
@@ -88,6 +94,7 @@ export default function Header() {
       setIsOpen(false)
       navigate("/login")
     }
+
     return (
       <div className="flex relative gap-2">
         <div className="flex gap-2 items-center">
@@ -99,8 +106,8 @@ export default function Header() {
                       </span>
                     )}
                     </button>) )}
-         <div onClick={()=> setIsOpen(!isOpen)} className="flex items-center cursor-pointer">
-          <img className="h-10 w-10 rounded-full" src={user?.image || "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRadJ-YmNxJTg6v9iO22fzR_65KenYJHFB5zg&s"} alt={user.firstName} />
+         <div onClick={()=> setIsOpen(!isOpen)} className="flex items-center cursor-pointer gap-1">
+          <img className="h-[30px] w-[30px] rounded-full" src={user?.image || "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRadJ-YmNxJTg6v9iO22fzR_65KenYJHFB5zg&s"} alt={user.firstName} />
           <p className="text-[18px] font-semibold">Hello {user.firstName}</p>
          </div>
         </div>
@@ -142,14 +149,49 @@ export default function Header() {
         </div>
 
         <div className="container mx-auto flex items-center justify-between gap-0 lg:gap-25 h-[14vh] py-10 lg:py-2 px-5">
-            <Link to="/"><img className="w-[152px] h-[39px]" src={Logo} alt="" /></Link>
 
-            <form onSubmit={handleSearch} className="hidden md:flex relative lg:w-[556px]">
+               <div className="flex justify-between w-full lg:hidden">
+               <div className="flex gap-2 items-center">
+                 <button onClick={toggleMenu} className="text-2xl">
+                {menuOpen ? <IoCloseSharp /> : <GiHamburgerMenu />}
+              </button>
+              <Link to="/"><img className="w-[152px] h-[39px]" src={Logo} alt="" /></Link>
+               </div>
+
+              <div className="flex gap-5 items-center">
+               {icons.map((icon) => {
+                if (icon.id === 1) {
+                   return (
+                   <button onClick={showCart} className="relative" key={icon.id}>
+                    <span className="text-3xl">{icon.icon}</span>
+                    {cart.length > 0 && (
+                      <span className="bg-[#6C4CF1] text-white w-6 h-6 rounded-full flex items-center justify-center absolute -top-2 -right-2">
+                        {cart.length}
+                        </span>)}
+                        </button>
+                        );}
+                        if (icon.id === 2) {
+                           return (
+                           <Link to={icon.linkTo} key={icon.id} className="relative">
+                             <span className="text-3xl">{icon.icon}</span>
+                              {likes.length > 0 && (
+                                <span className="bg-[#6C4CF1] text-white w-6 h-6 rounded-full flex items-center justify-center absolute -top-2 -right-2">
+                                  {likes.length}</span>)}
+                            </Link>);}
+                            
+                  return null;})}
+              </div>
+              
+               </div>
+
+            <Link to="/"><img className="w-[152px] h-[39px] hidden lg:flex" src={Logo} alt="" /></Link>
+
+            <form onSubmit={handleSearch} className="hidden lg:flex relative lg:w-[556px]">
                 <Input value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} type="text" className="w-full h-[12] rounded-md border-[#ACACAC]" placeholder="Search for a gadget..." />
                 <span className="absolute right-3 top-3"><CiSearch size={30} /></span>
             </form>
 
-             <div className="flex gap-5">
+             <div className="gap-5 hidden lg:flex">
           { user ? <UserMenu /> :
             <div className="flex gap-5 items-center">
               {icons.map((icon) => ( icon.id === 1 ? (
@@ -174,7 +216,24 @@ export default function Header() {
               )
                     ))}
                 </div>}
-                </div>
+              </div>
+
+
+              <AnimatePresence>
+                {menuOpen && (
+                  <motion.div  initial={{ opacity: 0, x: -200 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -100 }}
+                  transition={{ duration: 0.3 }}
+                  className="fixed top-0 left-0 w-[70vw] h-screen bg-gray-50 bg-opacity-95 shadow-md py-6 px-6 md:hidden rounded-b-lg z-[9999]">
+                     <button onClick={toggleMenu} className="lg:hidden text-2xl">
+                     {menuOpen ? <IoCloseSharp size={30} /> : <GiHamburgerMenu />}</button>
+
+
+            
+                  </motion.div>
+                )}
+              </AnimatePresence>
         </div>
 
         <div className="flex bg-[#191C1F] text-white mt-1">
