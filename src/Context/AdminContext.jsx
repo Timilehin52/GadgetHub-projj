@@ -11,12 +11,12 @@ export const AdminProvider = ({ children }) => {
   const token = localStorage.getItem("token");
 
   const apiProducts = axios.create({
-    baseURL: "http://localhost:5000/api/products",
+    baseURL: "https://gadgethub-backend-khw0.onrender.com/api/products",
     headers: { Authorization: `Bearer ${token}` },
   });
 
   const apiOrders = axios.create({
-    baseURL: "http://localhost:5000/api/orders",
+    baseURL: "https://gadgethub-backend-khw0.onrender.com/api/orders",
     headers: { Authorization: `Bearer ${token}` },
   });
 
@@ -32,23 +32,22 @@ export const AdminProvider = ({ children }) => {
     }
   };
 
-const searchProducts = async ({ q, brand, category }) => {
-  setLoading(true);
-  try {
-    const params = {};
-    if (q) params.q = q;
-    if (brand) params.brand = brand;
-    if (category) params.category = category;
+  const searchProducts = async ({ q, brand, category }) => {
+    setLoading(true);
+    try {
+      const params = {};
+      if (q) params.q = q;
+      if (brand) params.brand = brand;
+      if (category) params.category = category;
 
-    const res = await apiProducts.get("/search", { params });
-    setProducts(res.data.products);
-  } catch (err) {
-    console.error("Error searching products:", err);
-  } finally {
-    setLoading(false);
-  }
-};
-
+      const res = await apiProducts.get("/search", { params });
+      setProducts(res.data.products);
+    } catch (err) {
+      console.error("Error searching products:", err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const addProduct = async (formData) => {
     try {
@@ -78,13 +77,12 @@ const searchProducts = async ({ q, brand, category }) => {
         headers: { "Content-Type": "multipart/form-data" },
       });
       setProducts((prev) =>
-        prev.map((p) => (p._id === id ? res.data.product : p))
+        prev.map((p) => (p._id === id ? res.data.product : p)),
       );
     } catch (err) {
       console.error("Error editing product:", err);
     }
   };
-
 
   const fetchOrders = async () => {
     setLoading(true);
@@ -98,29 +96,27 @@ const searchProducts = async ({ q, brand, category }) => {
     }
   };
 
-const searchOrders = async ({ q, status, paymentStatus }) => {
-  setLoading(true);
-  try {
-    const params = {};
-    if (q) params.q = q;
-    if (status) params.status = status;
-    if (paymentStatus) params.paymentStatus = paymentStatus;
+  const searchOrders = async ({ q, status, paymentStatus }) => {
+    setLoading(true);
+    try {
+      const params = {};
+      if (q) params.q = q;
+      if (status) params.status = status;
+      if (paymentStatus) params.paymentStatus = paymentStatus;
 
-    const res = await apiOrders.get("/search", { params });
-    setOrders(res.data.orders);
-  } catch (err) {
-    console.error("Error searching orders:", err);
-  } finally {
-    setLoading(false);
-  }
-};
-
+      const res = await apiOrders.get("/search", { params });
+      setOrders(res.data.orders);
+    } catch (err) {
+      console.error("Error searching orders:", err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
     fetchProducts();
     fetchOrders();
   }, []);
-
 
   return (
     <AdminContext.Provider

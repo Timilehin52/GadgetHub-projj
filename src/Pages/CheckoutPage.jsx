@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect } from "react";
 import { Link, useNavigate } from "react-router";
 import Logo from "../assets/GadgetHub Logo.png";
 import paymentVector from "../assets/onlinePaymentVector.png";
@@ -16,7 +16,7 @@ import axios from "axios";
 import { AuthContext } from "../Context/AuthContext";
 
 export default function CheckoutPage() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [showPreview, setShowPreview] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const { cart, setCart } = useContext(CartContext);
@@ -44,14 +44,20 @@ export default function CheckoutPage() {
   // Named callback function
   async function paystackCallback(response, orderId) {
     try {
-      await axios.post("http://localhost:5000/api/payments/verify", {
-        reference: response.reference,
-      });
+      await axios.post(
+        "https://gadgethub-backend-khw0.onrender.com/api/payments/verify",
+        {
+          reference: response.reference,
+        },
+      );
 
-      await axios.patch(`http://localhost:5000/api/orders/${orderId}/payment`, {
-        paymentStatus: "paid",
-        paymentMethod: "creditcard",
-      });
+      await axios.patch(
+        `https://gadgethub-backend-khw0.onrender.com/api/orders/${orderId}/payment`,
+        {
+          paymentStatus: "paid",
+          paymentMethod: "creditcard",
+        },
+      );
 
       toast.success(`Payment successful. Ref: ${response.reference}`);
       setShowModal(true);
@@ -72,10 +78,13 @@ export default function CheckoutPage() {
     }
 
     try {
-      const { data } = await axios.post("http://localhost:5000/api/payments/card-init", {
-        email: orderData.customer.email,
-        amount,
-      });
+      const { data } = await axios.post(
+        "https://gadgethub-backend-khw0.onrender.com/api/payments/card-init",
+        {
+          email: orderData.customer.email,
+          amount,
+        },
+      );
 
       const { reference } = data;
 
@@ -101,7 +110,10 @@ export default function CheckoutPage() {
       return;
     }
 
-    const amount = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    const amount = cart.reduce(
+      (sum, item) => sum + item.price * item.quantity,
+      0,
+    );
     const deliveryDate = new Date(Date.now() + 24 * 60 * 60 * 1000);
 
     try {
@@ -113,21 +125,22 @@ export default function CheckoutPage() {
       });
 
       const orderRes = await axios.post(
-        "http://localhost:5000/api/orders/",
+        "https://gadgethub-backend-khw0.onrender.com/api/orders/",
         {
           customer: orderData.customer,
           items: cart,
           deliveryMethod: orderData.deliveryMethod,
           paymentMethod: orderData.paymentMethod,
           totalAmount: amount,
-          paymentStatus: orderData.paymentMethod === "delivery" ? "pending" : "pending",
+          paymentStatus:
+            orderData.paymentMethod === "delivery" ? "pending" : "pending",
           deliveryDate,
         },
         {
           headers: {
             Authorization: `Bearer ${token}`,
           },
-        }
+        },
       );
 
       const orderId = orderRes.data.order._id;
@@ -145,11 +158,17 @@ export default function CheckoutPage() {
         return;
       }
 
-      if (orderData.paymentMethod === "paystack" || orderData.paymentMethod === "paypal") {
-        const paymentRes = await axios.post("http://localhost:5000/api/payments/initialize", {
-          orderId,
-          method: orderData.paymentMethod,
-        });
+      if (
+        orderData.paymentMethod === "paystack" ||
+        orderData.paymentMethod === "paypal"
+      ) {
+        const paymentRes = await axios.post(
+          "https://gadgethub-backend-khw0.onrender.com/api/payments/initialize",
+          {
+            orderId,
+            method: orderData.paymentMethod,
+          },
+        );
 
         if (orderData.paymentMethod === "paystack") {
           window.location.href = paymentRes.data.authorization_url;
@@ -181,14 +200,18 @@ export default function CheckoutPage() {
           onConfirm={handleConfirmOrder}
         />
       )}
-      {showModal && <OrderReceived showModal={showModal} setShowModal={setShowModal} />}
+      {showModal && (
+        <OrderReceived showModal={showModal} setShowModal={setShowModal} />
+      )}
 
       <div className="hidden lg:flex bg-[#191C1F] text-white">
         <div className="flex container mx-auto items-center justify-between w-full h-[7vh] px-5">
           <h1>
             <span className="text-[#ACACAC]">Mon-Sat:</span> 9:00 AM - 5:30 PM
           </h1>
-          <h1 className="text-[#ACACAC]">Visit our showroom in 12 Street Address City, Lagos</h1>
+          <h1 className="text-[#ACACAC]">
+            Visit our showroom in 12 Street Address City, Lagos
+          </h1>
           <h1>Call Us: (+234) 01234 5678</h1>
         </div>
       </div>
@@ -245,11 +268,17 @@ export default function CheckoutPage() {
         </div>
 
         <div className="w-full lg:w-1/3">
-          <OrderSummary  deliveryMethod={orderData.deliveryMethod} paymentMethod={orderData.paymentMethod}
-          onConfirm={()=> { if (!token) { navigate("/login")}
-        else {
-          handlePreviewOrder()
-        }}} />
+          <OrderSummary
+            deliveryMethod={orderData.deliveryMethod}
+            paymentMethod={orderData.paymentMethod}
+            onConfirm={() => {
+              if (!token) {
+                navigate("/login");
+              } else {
+                handlePreviewOrder();
+              }
+            }}
+          />
         </div>
       </div>
 
