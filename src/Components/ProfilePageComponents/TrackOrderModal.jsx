@@ -1,10 +1,14 @@
 import React from "react";
-import orderIcon from "../../assets/icon.png";
+import orderIcon from "../../assets/Icon.png";
 import clockIcon from "../../assets/clockVector.png";
-import Truck from "../../assets/iconoir_delivery-truck.png"
-import Pin from "../../assets/locationPin.png"
-import DeliveredClock from "../../assets/icons8_checked.png"
-export default function TrackOrderModal({ showTrackModal, setShowTrackModal, order }) {
+import Truck from "../../assets/iconoir_delivery-truck.png";
+import Pin from "../../assets/locationPin.png";
+import DeliveredClock from "../../assets/icons8_checked.png";
+export default function TrackOrderModal({
+  showTrackModal,
+  setShowTrackModal,
+  order,
+}) {
   if (!showTrackModal) return null;
 
   const closeModal = () => {
@@ -21,11 +25,28 @@ export default function TrackOrderModal({ showTrackModal, setShowTrackModal, ord
   const currentIndex = statusOrder.indexOf(orderStatus);
 
   const steps = [
-    { key: "Order Placed", description: "Your order has been confirmed", icon: orderIcon, date: orderDate },
-    { key: "Processing", description: "Your order is being prepared", icon: clockIcon },
+    {
+      key: "Order Placed",
+      description: "Your order has been confirmed",
+      icon: orderIcon,
+      date: orderDate,
+    },
+    {
+      key: "Processing",
+      description: "Your order is being prepared",
+      icon: clockIcon,
+    },
     { key: "Shipped", description: "Your order is on its way", icon: Truck },
-    { key: "Out For Delivery", description: "Your order is out for delivery", icon: Pin },
-    { key: "Delivered", description: "Your order has been delivered", icon: DeliveredClock },
+    {
+      key: "Out For Delivery",
+      description: "Your order is out for delivery",
+      icon: Pin,
+    },
+    {
+      key: "Delivered",
+      description: "Your order has been delivered",
+      icon: DeliveredClock,
+    },
   ];
 
   return (
@@ -59,16 +80,28 @@ export default function TrackOrderModal({ showTrackModal, setShowTrackModal, ord
               : "h-16 w-[0.9px] bg-[#A8A8A8] absolute top-7";
 
             return (
-              <div key={step.key} className={`flex gap-4 ${index !== 0 ? "pt-5" : ""}`}>
+              <div
+                key={step.key}
+                className={`flex gap-4 ${index !== 0 ? "pt-5" : ""}`}
+              >
                 <div className={circleClasses}>
-                    <img className="w-4 h-4 object-contain" src={step.icon} alt="" />
-                    {index !== steps.length - 1 && (
-                        <span className={`${isCompleted ? "bg-[#6C4CF1] h-15" : "bg-[#A8A8A8]"} 
-                  absolute left-1/2 top-full w-[2px] h-10 transform -translate-x-1/2`}></span>)}
-                  </div>
+                  <img
+                    className="w-4 h-4 object-contain"
+                    src={step.icon}
+                    alt=""
+                  />
+                  {index !== steps.length - 1 && (
+                    <span
+                      className={`${isCompleted ? "bg-[#6C4CF1] h-15" : "bg-[#A8A8A8]"} 
+                  absolute left-1/2 top-full w-[2px] h-10 transform -translate-x-1/2`}
+                    ></span>
+                  )}
+                </div>
                 <div>
                   <p className="text-[18px] font-semibold">{step.key}</p>
-                  <p className="text-[16px] text-[#5F6C72]">{step.description}</p>
+                  <p className="text-[16px] text-[#5F6C72]">
+                    {step.description}
+                  </p>
                   {step.date && (
                     <p className="text-[14px] text-[#949596]">{step.date}</p>
                   )}
